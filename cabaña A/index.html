@@ -1,0 +1,148 @@
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>𝒞𝒶𝒃𝒶ñ𝒶𝓈 𝒜𝒸𝑜𝓈𝓉𝒶</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 0;  
+            padding: 0;  
+            background-image: url('imj/IMG-20250115-WA0031.jpg');  
+            background-size: cover;  
+            background-position: center;  
+            color: #01579b;  
+        }  
+        header {  
+            background: rgba(2, 136, 209, 0.8);  
+            color: white;  
+            text-align: center;  
+            padding: 1.5rem 0;  
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  
+        }  
+        nav {  
+            text-align: center;  
+            margin: 1rem 0;  
+            background-color: rgba(3, 169, 244, 0.8);  
+            padding: 0.5rem 0;  
+        }  
+        nav a {  
+            margin: 0 15px;  
+            text-decoration: none;  
+            color: white;  
+            font-weight: bold;  
+            transition: color 0.3s;  
+        }  
+        nav a:hover {  
+            color: #ffeb3b;  
+        }  
+        .section {  
+            max-width: 900px;  
+            margin: 20px auto;  
+            padding: 20px;  
+            background: rgba(255, 255, 255, 0.9);  
+            border-radius: 8px;  
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
+        }  
+        footer {  
+            text-align: center;  
+            background-color: rgba(2, 136, 209, 0.8);  
+            color: white;  
+            padding: 15px 0;  
+        }  
+        footer a {  
+            color: white;  
+            margin: 0 5px;  
+            text-decoration: none;  
+        }  
+        .map-container {  
+            position: relative;  
+            overflow: hidden;  
+            padding-top: 56.25%;  
+            border-radius: 8px;  
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+            margin-bottom: 20px;  
+        }  
+        .map-container iframe {  
+            position: absolute;  
+            top: 0;  
+            left: 0;  
+            width: 100%;  
+            height: 100%;  
+            border: 0;  
+        }  
+        /* Estilos para el formulario */  
+        form {  
+            display: flex;  
+            flex-direction: column;  
+        }  
+        label, input, textarea {  
+            margin: 10px 0;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <header>  
+        <h1>𝒞𝒶𝒃𝒶ñ𝒶𝓈 𝒜𝒸𝑜𝓈𝓉𝒶</h1>  
+    </header>  
+    <nav>  
+        <a href="interior.html">Interior</a>  
+        <a href="exterior.html">Exterior</a>  
+        <a href="#ubicacion">Ubicación</a>  
+        <a href="#contacto">Contacto</a>  
+    </nav>  
+    <section id="ubicacion" class="section">  
+        <h2>Ubicación</h2>  
+        <div class="map-container">  
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15545.718916558053!2d-68.5261329!3d-31.4257339!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x968143a61c35e8ff%3A0x5d05055d360b72c!2sCABA%C3%91AS%20A.L.A%20ACOSTA!5e0!3m2!1ses!2sar!4v1673810052617!5m2!1ses!2sar" allowfullscreen="" loading="lazy"></iframe>  
+        </div>  
+    </section>  
+    <section id="contacto" class="section">  
+        <h2>Contacto</h2>  
+        <p>Correo: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=alfredoseminario2024@gmail.com&su=Consulta&body=Hola,%20me%20gustaría%20hacer%20una%20consulta.">alfredoseminario2024@gmail.com</a></p>  
+        <p>Teléfono: <a href="tel:+54 264 522-2071">+54 264 522-2071  Dueño: Alfredo Acosta</a></p>  
+        <p>Redes Sociales:  
+            <a href="https://facebook.com" target="_blank">Facebook</a> | <a href="https://instagram.com" target="_blank">Instagram</a>   
+        </p>   
+
+        <!--<h3>Enviar un mensaje</h3>  
+        <form id="contact-form">  
+            <label for="name">Nombre:</label>  
+            <input type="text" id="name" name="name" required>  
+            
+            <label for="email">Correo electrónico:</label>  
+            <input type="email" id="email" name="email" required>  
+            
+            <label for="message">Mensaje:</label>  
+            <textarea id="message" name="message" required></textarea>  
+            
+            <button type="submit">Enviar</button>  
+        </form>--> 
+        
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>  
+        <script>  
+            (function(){  
+                emailjs.init("TU_USER_ID"); // Reemplaza con tu User ID de EmailJS  
+            })();  
+            
+            // Añade el evento al formulario de contacto  
+            document.getElementById('contact-form').addEventListener('submit', function(event) {  
+                event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional  
+                
+                // Envía el correo usando EmailJS  
+                emailjs.sendForm('TU_SERVICE_ID', 'TU_TEMPLATE_ID', this)  
+                .then(function(response) {  
+                    alert('Correo enviado exitosamente!');  
+                    document.getElementById("contact-form").reset(); // Limpiar el formulario después de enviar  
+                }, function(error) {  
+                    alert('Error al enviar el correo: ' + JSON.stringify(error));  
+                });  
+            });  
+        </script>  
+    </section>  
+    <footer>  
+        <p> </p>  
+    </footer>  
+</body>  
+</html>
